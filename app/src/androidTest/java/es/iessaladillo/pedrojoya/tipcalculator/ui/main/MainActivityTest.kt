@@ -24,7 +24,7 @@ class MainActivityTest {
 
     @Test
     fun should_txtTip_txtTotal_txtPerDiner_and_txtPerDinerRounded_not_be_focusable() {
-        onView(withId(R.id.txtTip))
+        onView(withId(R.id.txtPercentage))
             .check(matches(not(isFocusable())))
         onView(withId(R.id.txtTotal))
             .check(matches(not(isFocusable())))
@@ -66,7 +66,7 @@ class MainActivityTest {
         onView(withId(R.id.txtBill))
             .perform(replaceText("100"), closeSoftKeyboard())
 
-        onView(withId(R.id.txtTip))
+        onView(withId(R.id.txtPercentage))
             .check(matches(withText("10.00")))
         onView(withId(R.id.txtTotal))
             .check(matches(withText("110.00")))
@@ -94,7 +94,7 @@ class MainActivityTest {
         onView(withId(R.id.txtPercentage))
             .perform(replaceText("20"), closeSoftKeyboard())
 
-        onView(withId(R.id.txtTip))
+        onView(withId(R.id.txtPercentage))
             .check(matches(withText("20.00")))
         onView(withId(R.id.txtTotal))
             .check(matches(withText("120.00")))
@@ -124,7 +124,7 @@ class MainActivityTest {
         onView(withId(R.id.txtDiners))
             .perform(replaceText("2"), closeSoftKeyboard())
 
-        onView(withId(R.id.txtTip))
+        onView(withId(R.id.txtPercentage))
             .check(matches(withText("10.00")))
         onView(withId(R.id.txtTotal))
             .check(matches(withText("110.00")))
