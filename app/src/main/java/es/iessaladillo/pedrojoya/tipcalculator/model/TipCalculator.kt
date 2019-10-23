@@ -1,24 +1,28 @@
 package es.iessaladillo.pedrojoya.tipcalculator.model
 
+import kotlin.math.roundToInt
+
 
 // TipCalculator class. Its constructor receives bill, percentage and diners
 
-class TipCalculator {
-
+class TipCalculator(private var bill: Float, private var percentage: Float, private var diners: Int) {
+    init {
+        if(bill<0||percentage<0||diners<=0) throw IllegalArgumentException()
+    }
     fun calculateTip(): Float {
-        // TODO
+        return (percentage/100)*bill
     }
 
     fun calculateTotal(): Float {
-        // TODO
+        return calculateTip()+bill
     }
 
     fun calculatePerDiner(): Float {
-        // TODO
+        return calculateTotal()/diners
     }
 
     fun calculatePerDinerRounded(): Float {
-        // TODO
+        return calculatePerDiner().roundToInt().toFloat()
     }
 
 }

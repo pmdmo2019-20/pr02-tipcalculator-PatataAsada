@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test
 import org.junit.jupiter.params.ParameterizedTest
 import org.junit.jupiter.params.provider.ValueSource
 
-class TipCalculatorTest {
+class   TipCalculatorTest {
 
     @DisplayName("Should throw IllegalArgumentException when bill is negative")
     @Test
@@ -17,50 +17,54 @@ class TipCalculatorTest {
     @DisplayName("Should throw IllegalArgumentException when percentage is negative")
     @Test
     fun `should throw IllegalArgumentException when percentage is negative`() {
-        // TODO
+        assertThrows(java.lang.IllegalArgumentException::class.java){
+            TipCalculator(100f,-10f,1)
+        }
     }
 
     @DisplayName("Should throw IllegalArgumentException when diners is not positive")
     @ParameterizedTest
     @ValueSource(ints = [-1, 0])
     fun `should throw IllegalArgumentException when diners is not positive`(diners: Int) {
-        // TODO
+        assertThrows(java.lang.IllegalArgumentException::class.java){
+            TipCalculator(100f,10f,diners)
+        }
     }
 
     @DisplayName("Should calculate total properly")
     @Test
     fun `should calculate total properly`() {
-        // TODO
+        assert(110f==TipCalculator(100f,10f,1).calculateTotal())
     }
 
     @DisplayName("Should calculate total properly with bill 0")
     @Test
     fun `should calculate total properly with bill 0`() {
-        // TODO
+        assert(0f==TipCalculator(0f,10f,1).calculateTotal())
     }
 
     @DisplayName("Should calculate total properly with percentage 0")
     @Test
     fun `should calculate total properly with percentage 0`() {
-        // TODO
+        assert(100f==TipCalculator(100f,0f,1).calculateTotal())
     }
 
     @DisplayName("Should calculate perDiner properly")
     @Test
     fun `should calculate perDiner properly`() {
-        // TODO
+        assert(55f==TipCalculator(100f,10f,2).calculatePerDiner())
     }
 
     @DisplayName("Should calculate perDinerRounded properly")
     @Test
     fun `should calculate perDinerRounded properly`() {
-        // TODO
+        assert(37f==TipCalculator(100f,10f,3).calculatePerDinerRounded())
     }
 
     @DisplayName("Should calculate perDinerRounded properly when perDinerRounded has 00 as cents")
     @Test
     fun `should calculate perDinerRounded properly when perDinerRounded has 00 as cents`() {
-        // TODO
+        assert(55f==TipCalculator(100f,10f,2).calculatePerDinerRounded())
     }
 
 }
