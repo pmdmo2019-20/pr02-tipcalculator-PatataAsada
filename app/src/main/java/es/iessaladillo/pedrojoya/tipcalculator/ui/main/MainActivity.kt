@@ -22,12 +22,14 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun resetTipAndBill() {
-        txtTip.setText(R.string.defaultValue)
+        txtTip.setText(R.string.defaultTip)
         txtBill.setText(R.string.defaultValue)
+        txtBill.requestFocus()
     }
 
     private fun resetDiners() {
         txtDiners.setText(R.string.defaultDiners)
+        txtDiners.requestFocus()
     }
 
     private fun setTextChangedListeners() {
@@ -37,7 +39,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun checkChange(text: CharSequence?, txt: String) {
-        if (text.isNullOrBlank()) {
+        if (text.isNullOrBlank() || text.isEmpty()) {
             setDefault(txt)
         } else {
             calculateAll()
@@ -47,7 +49,7 @@ class MainActivity : AppCompatActivity() {
     private fun setDefault(txt: String) {
         when (txt) {
             "bill" -> txtBill.setText(R.string.defaultValue)
-            "percentage" -> txtPercentage.setText(R.string.defaultValue)
+            "percentage" -> txtPercentage.setText(R.string.defaultTip)
             "diners" -> txtDiners.setText(R.string.defaultDiners)
         }
     }
@@ -59,10 +61,10 @@ class MainActivity : AppCompatActivity() {
             txtDiners.text.toString().toInt()
         )
 
-        txtTotal.setText(tipCalculator.calculateTotal().toString())
-        txtTip.setText(tipCalculator.calculateTip().toString())
-        txtPerDiner.setText(tipCalculator.calculatePerDiner().toString())
-        txtPerDinerRounded.setText(tipCalculator.calculatePerDinerRounded().toString())
+        txtTotal.setText(String.format("%.2f",tipCalculator.calculateTotal()))
+        txtTip.setText(String.format("%.2f",tipCalculator.calculateTip()))
+        txtPerDiner.setText(String.format("%.2f",tipCalculator.calculatePerDiner()))
+        txtPerDinerRounded.setText(String.format("%.2f",tipCalculator.calculatePerDinerRounded()))
     }
 
 
