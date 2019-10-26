@@ -75,7 +75,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/lblTipPercentage"
         tools:ignore="Autofill,LabelFor"
-        android:text="@string/defaultValue"
+        android:text="@string/defaultTip"
         android:textAlignment="textEnd"/>
 
     <ImageView
