@@ -29,10 +29,11 @@
         android:layout_marginEnd="8dp"
         android:ems="10"
         android:inputType="numberDecimal"
+        android:selectAllOnFocus="true"
+        android:text="@string/defaultValue"
         app:layout_constraintEnd_toStartOf="@+id/imgBill"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/lblBill"
-        android:selectAllOnFocus="true"
         tools:ignore="Autofill,LabelFor" />
 
     <ImageView
@@ -55,8 +56,7 @@
         android:layout_marginTop="8dp"
         android:text="@string/tip_percentage"
         app:layout_constraintEnd_toEndOf="@+id/txtPercentage"
-        app:layout_constraintTop_toBottomOf="@+id/txtBill"
-        android:selectAllOnFocus="true" />
+        app:layout_constraintTop_toBottomOf="@+id/txtBill" />
 
     <EditText
         android:id="@+id/txtPercentage"
@@ -66,14 +66,15 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:ems="10"
-        app:layout_constraintHorizontal_weight="1"
         android:inputType="numberDecimal"
+        android:selectAllOnFocus="true"
         app:layout_constraintEnd_toStartOf="@+id/imgPercentage"
         app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_weight="1"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/lblTipPercentage"
-        android:focusable="false"
-        tools:ignore="Autofill,LabelFor" />
+        tools:ignore="Autofill,LabelFor"
+        android:text="@string/defaultValue"/>
 
     <ImageView
         android:id="@+id/imgPercentage"
@@ -94,14 +95,16 @@
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
         android:ems="10"
-        app:layout_constraintHorizontal_weight="2"
         android:inputType="numberDecimal"
+        android:focusable="false"
         app:layout_constraintBottom_toBottomOf="@+id/txtPercentage"
         app:layout_constraintEnd_toStartOf="@+id/imgTip"
         app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_weight="2"
         app:layout_constraintStart_toEndOf="@+id/imgPercentage"
         app:layout_constraintTop_toTopOf="@+id/txtPercentage"
-        tools:ignore="Autofill,LabelFor" />
+        tools:ignore="Autofill,LabelFor"
+        android:text="@string/defaultValue"/>
 
     <ImageView
         android:id="@+id/imgTip"
@@ -146,6 +149,7 @@
         android:ems="10"
         android:focusable="false"
         android:inputType="numberDecimal"
+        android:text="@string/defaultValue"
         app:layout_constraintEnd_toStartOf="@+id/imgTotal"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/lblTotal"
@@ -190,6 +194,7 @@
         android:ems="10"
         app:layout_constraintHorizontal_weight="1"
         android:inputType="number"
+        android:text="@string/defaultDiners"
         app:layout_constraintEnd_toStartOf="@+id/txtPerDiner"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
@@ -244,6 +249,7 @@
         android:layout_marginEnd="8dp"
         android:ems="10"
         android:inputType="numberDecimal"
+        android:text="@string/defaultValue"
         app:layout_constraintEnd_toStartOf="@+id/imgRounded"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/lblRounded"

@@ -8,4 +8,6 @@
     <string name="rounded">Rounded</string>
     <string name="per_diner">Per diner</string>
     <string name="diners">Diners</string>
+    <string name="defaultDiners">1</string>
+    <string name="defaultValue">0,00</string>
 </resources>
