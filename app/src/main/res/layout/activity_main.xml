@@ -34,7 +34,8 @@
         app:layout_constraintEnd_toStartOf="@+id/imgBill"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/lblBill"
-        tools:ignore="Autofill,LabelFor" />
+        tools:ignore="Autofill,LabelFor"
+        android:textAlignment="textEnd"/>
 
     <ImageView
         android:id="@+id/imgBill"
@@ -74,7 +75,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/lblTipPercentage"
         tools:ignore="Autofill,LabelFor"
-        android:text="@string/defaultValue"/>
+        android:text="@string/defaultValue"
+        android:textAlignment="textEnd"/>
 
     <ImageView
         android:id="@+id/imgPercentage"
@@ -104,7 +106,8 @@
         app:layout_constraintStart_toEndOf="@+id/imgPercentage"
         app:layout_constraintTop_toTopOf="@+id/txtPercentage"
         tools:ignore="Autofill,LabelFor"
-        android:text="@string/defaultValue"/>
+        android:text="@string/defaultValue"
+        android:textAlignment="textEnd"/>
 
     <ImageView
         android:id="@+id/imgTip"
@@ -153,7 +156,8 @@
         app:layout_constraintEnd_toStartOf="@+id/imgTotal"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/lblTotal"
-        tools:ignore="Autofill,LabelFor" />
+        tools:ignore="Autofill,LabelFor"
+        android:textAlignment="textEnd"/>
 
     <Button
         android:id="@+id/btnResetTip"
@@ -200,7 +204,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/lblDiners"
         android:selectAllOnFocus="true"
-        tools:ignore="Autofill,LabelFor" />
+        tools:ignore="Autofill,LabelFor"
+        android:textAlignment="textEnd"/>
 
     <EditText
         android:id="@+id/txtPerDiner"
@@ -216,7 +221,9 @@
         app:layout_constraintStart_toEndOf="@+id/txtDiners"
         app:layout_constraintTop_toBottomOf="@+id/lblPerDiner"
         android:focusable="false"
-        tools:ignore="Autofill,LabelFor" />
+        tools:ignore="Autofill,LabelFor"
+        android:text="@string/defaultValue"
+        android:textAlignment="textEnd"/>
 
     <ImageView
         android:id="@+id/imgPerDiner"
@@ -254,7 +261,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/lblRounded"
         android:focusable="false"
-        tools:ignore="Autofill,LabelFor" />
+        tools:ignore="Autofill,LabelFor"
+        android:textAlignment="textEnd"/>
 
     <ImageView
         android:id="@+id/imgRounded"

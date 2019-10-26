@@ -13,24 +13,39 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         setTextChangedListeners()
+        setButtons()
+    }
+
+    private fun setButtons() {
+        btnResetTip.setOnClickListener { resetTipAndBill() }
+        btnResetDiners.setOnClickListener { resetDiners() }
+    }
+
+    private fun resetTipAndBill() {
+        txtTip.setText(R.string.defaultValue)
+        txtBill.setText(R.string.defaultValue)
+    }
+
+    private fun resetDiners() {
+        txtDiners.setText(R.string.defaultDiners)
     }
 
     private fun setTextChangedListeners() {
-        txtBill.doOnTextChanged { text, _, _, _ -> checkChange(text,"bill") }
-        txtPercentage.doOnTextChanged { text, _, _, _ -> checkChange(text,"percentage") }
+        txtBill.doOnTextChanged { text, _, _, _ -> checkChange(text, "bill") }
+        txtPercentage.doOnTextChanged { text, _, _, _ -> checkChange(text, "percentage") }
         txtDiners.doOnTextChanged { text, _, _, _ -> checkChange(text, "diners") }
     }
 
-    private fun checkChange(text: CharSequence?,txt: String ) {
-        if(text.isNullOrBlank()){
+    private fun checkChange(text: CharSequence?, txt: String) {
+        if (text.isNullOrBlank()) {
             setDefault(txt)
-        }else{
+        } else {
             calculateAll()
         }
     }
 
     private fun setDefault(txt: String) {
-        when(txt) {
+        when (txt) {
             "bill" -> txtBill.setText(R.string.defaultValue)
             "percentage" -> txtPercentage.setText(R.string.defaultValue)
             "diners" -> txtDiners.setText(R.string.defaultDiners)
@@ -38,9 +53,11 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun calculateAll() {
-        var tipCalculator = TipCalculator(txtBill.text.toString().toFloat(),
-                                          txtPercentage.text.toString().toFloat(),
-                                          txtDiners.text.toString().toInt())
+        var tipCalculator = TipCalculator(
+            txtBill.text.toString().toFloat(),
+            txtPercentage.text.toString().toFloat(),
+            txtDiners.text.toString().toInt()
+        )
 
         txtTotal.setText(tipCalculator.calculateTotal().toString())
         txtTip.setText(tipCalculator.calculateTip().toString())
